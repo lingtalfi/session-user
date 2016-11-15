@@ -20,7 +20,7 @@ Class User
     {
         if (array_key_exists('user_id', $_SESSION)) {
             // has it expired?
-            if (time() < $_SESSION['user_connexion_time'] + (int)Config::get('session_timeout')) {
+            if (time() < $_SESSION['user_connexion_time'] + USER_SESSION_TIMEOUT) {
                 return true;
             }
         }
